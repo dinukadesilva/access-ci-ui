@@ -875,7 +875,7 @@ const te = (e = 900) => document.body.clientWidth >= e ? "desktop" : "mobile", k
     ...k.header
   },
   siteMenus: {
-    items: siteItems,
+    items: [],
     siteName: "Allocations",
     targetId: "site-menus",
     ...k.siteMenus
@@ -886,7 +886,7 @@ const te = (e = 900) => document.body.clientWidth >= e ? "desktop" : "mobile", k
     ...k.tableOfContents
   },
   footerMenus: {
-    items: siteItems,
+    items: [],
     targetId: "footer-menus",
     ...k.footerMenus
   },
