@@ -31,96 +31,42 @@ The library includes functions for rendering common ACCESS user interface compon
 ## Example
 
 ```html
-<div id="universal-menus"></div>
-<div id="header"></div>
-<div id="site-menus"></div>
-<div id="main" class="container">
-  <div id="body">
-    <h1>Page Title</h1>
-    <h2>First Section</h2>
-    <h2>Second Section</h2>
-    <h2>Third Section</h2>
-  </div>
-  <div id="table-of-contents"></div>
-</div>
-<div id="footer-menus"></div>
-<div id="footer"></div>
-<script type="module">
-  import {
-    footer,
-    footerMenus,
-    header,
-    siteMenus,
-    tableOfContents,
-    universalMenuItems,
-    universalMenus,
-  } from "https://esm.sh/@access-ci/ui@0.2.5";
+    <script>
+        winodw.ACCESS_CI_UI_CONFIG = {
+          universalMenus: {
+            siteName: "Allocations"
+          },
+          header: {
+            siteName: "Allocations"
+          },
+          siteMenus: {
+            items: siteItems,
+            siteName: "Allocations"
+          },
+          tableOfContents: {},
+          footerMenus: {
+            items: siteItems
+          },
+          footer: {}
+        }
+    </script>
 
-  const siteItems = [
-    {
-      name: "One",
-      items: [
-        {
-          name: "Item A",
-          href: "/one/a",
-        },
-        {
-          name: "Item B",
-          href: "/one/b",
-        },
-        {
-          name: "Item C",
-          href: "/one/c",
-        },
-      ],
-    },
-    {
-      name: "Two",
-      items: [
-        {
-          name: "Item A",
-          href: "/two/a",
-        },
-        {
-          name: "Item B",
-          href: "/two/b",
-        },
-      ],
-    },
-    {
-      name: "Three",
-      href: "/three",
-    },
-  ];
+    <script defer="defer" src="https://cdn.jsdelivr.net/gh/dinukadesilva/access-ci-ui@0.3.0/dist/access-ci-ui.js"></script>
 
-  universalMenus({
-    loginUrl: "/login",
-    logoutUrl: "/logout",
-    siteName: "Allocations",
-    target: document.getElementById("universal-menus"),
-  });
-
-  header({
-    siteName: "Allocations",
-    target: document.getElementById("header"),
-  });
-
-  siteMenus({
-    items: siteItems,
-    siteName: "Allocations",
-    target: document.getElementById("site-menus"),
-  });
-
-  tableOfContents({
-    headings: document.querySelectorAll("#body h1, #body h2"),
-    target: document.getElementById("table-of-contents"),
-  });
-
-  footerMenus({
-    items: siteItems,
-    target: document.getElementById("footer-menus"),
-  });
-
-  footer({ target: document.getElementById("footer") });
-</script>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    <div id="universal-menus"></div>
+    <div id="header"></div>
+    <div id="site-menus"></div>
+    <div id="main" class="container">
+      <div id="body">
+        <h1>Page Title</h1>
+        <h2>First Section</h2>
+        <h2>Second Section</h2>
+        <h2>Third Section</h2>
+      </div>
+      <div id="table-of-contents"></div>
+    </div>
+    <div id="footer-menus"></div>
+    <div id="footer"></div>
 ```

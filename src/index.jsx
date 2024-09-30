@@ -5,6 +5,51 @@ import { loginMenuItem, myAccessMenuItem, universalMenuItems } from "./items";
 import { TableOfContents } from "./table-of-contents";
 import { renderShadow } from "./utils";
 
+
+
+const windowParamConfig = {...winodw.ACCESS_CI_UI_CONFIG};
+
+const paramConfig = {
+  universalMenus: {
+    loginUrl: "/login",
+    logoutUrl: "/logout",
+    siteName: "Allocations",
+    targetId: "universal-menus",
+    ...windowParamConfig.universalMenus
+  },
+  header: {
+    siteName: "Allocations",
+    targetId: "header",
+    ...windowParamConfig.header
+  },
+  siteMenus: {
+    items: siteItems,
+    siteName: "Allocations",
+    targetId: "site-menus",
+    ...windowParamConfig.siteMenus
+  },
+  tableOfContents: {
+    headings: document.querySelectorAll("#body h1, #body h2"),
+    targetId: "table-of-contents",
+    ...windowParamConfig.tableOfContents
+  },
+  footerMenus: {
+    items: siteItems,
+    targetId: "footer-menus",
+    ...windowParamConfig.footerMenus
+  },
+  footer: {
+    targetId: "footer",
+    ...windowParamConfig.footer
+  }
+};
+
+for (let key in paramConfig) {
+  if (!paramConfig[key].target) {
+    paramConfig[key].target = document.getElementById(paramConfig[key].targetId)
+  }
+}
+
 const footer = (params = {}) => {
   renderShadow(<Footer {...params} />, params.target);
 };
