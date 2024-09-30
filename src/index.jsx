@@ -23,7 +23,7 @@ const paramConfig = {
     ...windowParamConfig.header
   },
   siteMenus: {
-    items: siteItems,
+    items: [],
     siteName: "Allocations",
     targetId: "site-menus",
     ...windowParamConfig.siteMenus
@@ -34,7 +34,7 @@ const paramConfig = {
     ...windowParamConfig.tableOfContents
   },
   footerMenus: {
-    items: siteItems,
+    items: [],
     targetId: "footer-menus",
     ...windowParamConfig.footerMenus
   },
