@@ -7,7 +7,7 @@ import { renderShadow } from "./utils";
 
 
 
-const windowParamConfig = {...winodw.ACCESS_CI_UI_CONFIG};
+const windowParamConfig = {...window.ACCESS_CI_UI_CONFIG};
 
 const paramConfig = {
   universalMenus: {
