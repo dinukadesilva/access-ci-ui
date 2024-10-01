@@ -21,7 +21,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "preversion": "",
-    "version": "npm run build && git add -f -A dist",
+    "version": "npm run build && esbuild ./dist/access-ci-ui.js --bundle --outfile=./dist/access-ci-ui.esbuild.js && git add -f -A dist",
     "postversion": "git push && git push --tags"
   },
   "dependencies": {
