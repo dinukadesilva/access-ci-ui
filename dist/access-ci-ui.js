@@ -860,7 +860,7 @@ const te = (e = 900) => document.body.clientWidth >= e ? "desktop" : "mobile", k
       })]
     });
 }, k = {
-  ...winodw.ACCESS_CI_UI_CONFIG
+  ...window.ACCESS_CI_UI_CONFIG
 }, z = {
   universalMenus: {
     loginUrl: "/login",
