@@ -64,15 +64,6 @@
     <div id="footer-menus"></div>
     <div id="footer"></div>
     <script type="module">
-      import {
-        footer,
-        footerMenus,
-        header,
-        siteMenus,
-        tableOfContents,
-        universalMenuItems,
-        universalMenus,
-      } from "/src/index.jsx";
 
       const siteItems = [
         {
@@ -111,35 +102,24 @@
         },
       ];
 
-      universalMenus({
-        loginUrl: "/login",
-        logoutUrl: "/logout",
-        siteName: "Allocations",
-        target: document.getElementById("universal-menus"),
-      });
-
-      header({
-        siteName: "Allocations",
-        target: document.getElementById("header"),
-      });
-
-      siteMenus({
-        items: siteItems,
-        siteName: "Allocations",
-        target: document.getElementById("site-menus"),
-      });
-
-      tableOfContents({
-        headings: document.querySelectorAll("#body h1, #body h2"),
-        target: document.getElementById("table-of-contents"),
-      });
-
-      footerMenus({
-        items: siteItems,
-        target: document.getElementById("footer-menus"),
-      });
-
-      footer({ target: document.getElementById("footer") });
+      window.ACCESS_CI_UI_CONFIG = {
+          universalMenus: {
+            siteName: "Allocations"
+          },
+          header: {
+            siteName: "Allocations"
+          },
+          siteMenus: {
+            items: siteItems,
+            siteName: "Allocations"
+          },
+          tableOfContents: {},
+          footerMenus: {
+            items: siteItems
+          },
+          footer: {}
+        }
     </script>
+  <script type="module" src="/src/index.jsx"></script>
   </body>
 </html>

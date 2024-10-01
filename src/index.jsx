@@ -8,6 +8,7 @@ import { renderShadow } from "./utils";
 
 
 const windowParamConfig = {...window.ACCESS_CI_UI_CONFIG};
+console.log("windowParamConfig", windowParamConfig)
 
 const paramConfig = {
   universalMenus: {
@@ -43,6 +44,8 @@ const paramConfig = {
     ...windowParamConfig.footer
   }
 };
+
+console.log("paramConfig", paramConfig)
 
 for (let key in paramConfig) {
   if (!paramConfig[key].target) {
@@ -111,6 +114,13 @@ const footerMenus = ({ items, target }) =>
 
 const tableOfContents = ({ headings = [], target }) =>
   renderShadow(<TableOfContents headings={headings} />, target);
+
+footer(paramConfig.footer);
+header(paramConfig.header);
+universalMenus(paramConfig.universalMenus);
+footerMenus(paramConfig.footerMenus);
+siteMenus(paramConfig.siteMenus);
+tableOfContents(paramConfig.tableOfContents);
 
 export {
   footer,
